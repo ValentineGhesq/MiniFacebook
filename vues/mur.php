@@ -1,0 +1,1 @@
+<?php include("traitement/post.php")?>

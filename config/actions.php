@@ -10,5 +10,10 @@ $listeDesActions = array(
     "creation" => "vues/creation.php",
     "newcompte" => "traitement/newcompte.php",
     "index" => "vues/index.php",
-    "404" => "vues/404.php"
+    "404" => "vues/404.php",
+    "mur" => "vues/mur.php",
+    "newami" => "traitement/newami.php",
+    "newpost" => "traitement/newpost.php",
+    "post" => "traitement/post.php",
+    "amis" => "traitement/amis.php",
 );
