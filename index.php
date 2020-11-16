@@ -75,6 +75,6 @@ if (isset($_SESSION['info'])) {
             ?>
 
 
-<footer>Le pied de page</footer>
+<footer></footer>
 </body>
 </html>
