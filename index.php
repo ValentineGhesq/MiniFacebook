@@ -39,6 +39,12 @@ if (isset($_SESSION['info'])) {
         <div class="container">
             <h3>My Face </h3>
         </div>
+        <?php if (isset($_SESSION['id'])) { 
+            echo "  <nav>
+                     <a href='index.php?action=accueil'>Profil</a> 
+                     <a href='index.php?action=mur'>Mon Mur</a> 
+                    </nav>";
+                    } ?>
     </div>
 </header>
 
