@@ -18,7 +18,7 @@ while($line=$q->fetch()) {
 
 if($ami == false){
 
-$s ="INSERT INTO lien(idUtilisateur1,idUtilisateur2,etat) VALUES( ? , ? ,'ami') ";
+$s ="INSERT INTO lien(idUtilisateur1,idUtilisateur2,etat) VALUES( ? , ? ,'attente') ";
 $q = $pdo->prepare($s);// Etape 1  : preparation
 $q->execute(array($_SESSION['id'],$_GET['id']));
 } else{
@@ -27,5 +27,11 @@ $q->execute(array($_SESSION['id'],$_GET['id']));
     echo "</script>";
 
 }
+
+
+
+
+
+
 
 ?>
