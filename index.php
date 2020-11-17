@@ -41,7 +41,7 @@ if (isset($_SESSION['info'])) {
         </div>
         <?php if (isset($_SESSION['id'])) { 
             echo "  <nav>
-                     <a href='index.php?action=accueil'>Profil</a> 
+                     <a href='index.php?action=accueil&id=".$_SESSION['id']."'>Profil</a> 
                      <a href='index.php?action=mur&id=".$_SESSION['id']."'>Mon Mur</a> 
                     </nav>";
                     } ?>

@@ -16,4 +16,6 @@ $listeDesActions = array(
     "newpost" => "traitement/newpost.php",
     "post" => "traitement/post.php",
     "amis" => "traitement/amis.php",
+    "etatami" => "traitement/etatami.php"
+    
 );
