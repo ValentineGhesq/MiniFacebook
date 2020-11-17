@@ -1,14 +1,14 @@
 <?php
 
-$sql = "SELECT * FROM ecrit WHERE idAmi=? order by dateEcrit DESC";
+$sql = "SELECT * FROM ecrit INNER JOIN user on idAmi=user.id WHERE idAmi=? order by dateEcrit DESC ";
         $q = $pdo->prepare($sql);
         $q->execute(array($_GET['id']));
 
 while($line=$q->fetch()) {
 
-    if($line['image']!=""){
+    if($line['image']==""){
     echo "<div>
-            <div> <h3>".$line['idAmi']."</h3> <p>".$line['dateEcrit']."</p></div>
+            <div> <h3>".$line['login']."</h3> <p>".$line['dateEcrit']."</p></div>
             <div><h2>".$line['titre']."</h2> <p>".$line['contenu']."</p> </div>
             </div>";
     }else{

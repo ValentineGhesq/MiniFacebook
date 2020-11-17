@@ -42,7 +42,7 @@ if (isset($_SESSION['info'])) {
         <?php if (isset($_SESSION['id'])) { 
             echo "  <nav>
                      <a href='index.php?action=accueil'>Profil</a> 
-                     <a href='index.php?action=mur'>Mon Mur</a> 
+                     <a href='index.php?action=mur&id=".$_SESSION['id']."'>Mon Mur</a> 
                     </nav>";
                     } ?>
     </div>
@@ -53,6 +53,7 @@ if (isset($_SESSION['info'])) {
         <?php
         if (isset($_SESSION['id'])) {
             echo "Bonjour " . $_SESSION['login'] . " <a href='index.php?action=deconnexion'>Deconnexion</a>";
+            
         } else {
             if($_GET['action'] !='login'&& $_POST['creation']!="envoyer"){
             header('location: index.php?action=login');

@@ -14,7 +14,7 @@ if($line==false){
     session_start();
     $_SESSION['id']= $line['id'];
    $_SESSION['login']= $line['login']; 
-    header('location: index.php?action=accueil');
+    header('location: index.php?action=mur&id='.$_SESSION['id']);
 }
 
 // Si $line est faux le couple login mdp est mauvais, on retourne au formulaire
