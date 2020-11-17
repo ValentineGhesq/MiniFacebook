@@ -44,6 +44,10 @@
     width: 200px;
 }
 
+.connexion h3 {
+    text-align: center;
+}
+
  h3 {
     font-family: 'aileron';
     font-size: 18pt;
@@ -67,6 +71,11 @@ h4 {
     width: 200px;
     right: 200px;
 }
+
+.nouvcompt h3 {
+    text-align: center;
+}
+
 footer {
     background-color: #1c9db0;
     margin: 0px;
