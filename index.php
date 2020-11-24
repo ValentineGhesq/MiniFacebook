@@ -49,7 +49,7 @@ if (isset($_SESSION['info'])) {
     </div>
 </header>
 
-<div>
+<div class="bonjour">
 
         <?php
         if (isset($_SESSION['id'])) {
