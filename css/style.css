@@ -23,6 +23,13 @@
     margin: 0px auto;
     padding-left: 10px;
     padding-right: 10px;
+    display: flex;
+    font-family: 'aileron';
+}
+
+nav {
+    color: red;
+    text-decoration: none;
 }
 
 .titre {
@@ -33,28 +40,26 @@
     font-weight: lighter;
     margin-top: 50px;
 }
-
+.ladiv {
+    display: flex;
+    justify-content: center;
+}
 .connexion {
-    margin-left: 400px;
+    
     margin-top: 50px;
     padding: 20px;
     border-style: solid;
     border-width: 1px;
     border-color: #1c9db0;
-    width: 200px;
+   
 }
 
 .connexion h3 {
     text-align: center;
 }
 
- h3 {
-    font-family: 'aileron';
-    font-size: 18pt;
-    font-weight: lighter;
-}
 
-h4 {
+label {
     font-family: 'aileron';
     font-weight: lighter;
     font-size: 12pt;
@@ -62,18 +67,92 @@ h4 {
 }
 
 .nouvcompt {
-    margin-left: 700px;
-    margin-top: -166px;
-    padding: 10px;
+    margin-top: 50px;
+    padding: 20px;
     border-style: solid;
     border-width: 1px;
     border-color: #1c9db0;
-    width: 200px;
-    right: 200px;
+    
 }
 
 .nouvcompt h3 {
     text-align: center;
+}
+
+.tout {
+    display: flex;
+   
+}
+
+.gauche {
+    
+}
+
+.droite {
+    
+}
+
+h1 {
+    text-align: center;
+    font-family: 'aileron';
+    font-weight: normal;
+    font-size: 30pt;
+}
+
+h2 {
+    font-family: 'aileron';
+    font-weight: normal;
+    font-size: 20pt;
+   
+}
+
+h3 {
+    font-family: 'aileron';
+    font-size: 18pt;
+    font-weight: lighter;
+    margin-bottom: 20px;
+}
+
+h4 {
+    font-family: 'aileron';
+    font-size: 15pt;
+    font-weight: normal;
+}
+
+.carre {
+    display: flex;
+    justify-content: center;
+    height: 250px;
+    text-align: center;
+    
+}
+
+.attente {
+    border-style: solid;
+    border-width: 1px;
+    border-color: #1c9db0;
+    margin-top: 50px;
+    padding: 20px;
+    width: 300px;
+    
+}
+
+.amis {
+    border-style: solid;
+    border-width: 1px;
+    border-color: #1c9db0;
+    margin-top: 50px;
+    padding: 20px;
+    width: 300px;
+}
+
+.recherche {
+    border-style: solid;
+    border-width: 1px;
+    border-color: #1c9db0;
+    margin-top: 50px;
+    padding: 20px;
+    width: 300px;
 }
 
 footer {

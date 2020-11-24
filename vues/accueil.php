@@ -1,7 +1,11 @@
 
 
-<div><h1>Profil</h1></div>
+<div>
+    <h1>Profil</h1>
+</div>
 
+<div class="tout">
+<div class="gauche">
 <div>
 <?php  $sql = "SELECT * FROM user WHERE id=?";
     $q = $pdo->prepare($sql);
@@ -17,6 +21,8 @@
 <div>
 
 </div>
+</div>
+<div class="droite">
     <h2>Mes amis</h2>
    <?php 
    $sql = "SELECT * FROM user";
@@ -33,22 +39,25 @@
 }
 }
             ?>
-<div>
-    <h3>En attente</h3>
+</div>
+</div>            
+<div class="carre">            
+<div class="attente">
+    <h4>En attente</h4>
     <div>
     
     </div>
 </div>
 
-<div>
-    <h3>Demandes d'amis reçues</h3>
+<div class="amis">
+    <h4>Demandes d'amis reçues</h4>
     <div>
     <?php include('traitement/attente.php') ?>
     </div>
 </div>
 
-<div>
-    <h3>Rechercher des amis</h3>
+<div class="recherche">
+    <h4>Rechercher des amis</h4>
     <form method="POST">
         <input type="text" name="recherche" placeholder="recherche des amis">
         <input type="submit" name="sub" value="recherche">
@@ -58,4 +67,5 @@
     </form>
 
     
+</div>
 </div>
