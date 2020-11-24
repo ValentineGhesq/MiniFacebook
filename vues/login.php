@@ -11,7 +11,7 @@
     <label for="mdp"> <br> Mot de passe : <br></label>
       <input type="password" name="mdp" placeholder="mdp" minlength="4" required>
       <br>
-      <input type="submit" name="connexion" value="envoyer" >
+      <input class="bouton" type="submit" name="connexion" value="envoyer" >
 </form>
 </div>
 <div class="nouvcompt">
@@ -25,7 +25,7 @@
     <label for="mdp"> <br> Mot de passe :<br></label>
     <input type="password" name="mdp" placeholder="mdp" minlength="4" maxlength="20" required>
     <br>
-    <input type="submit" name="creation" value="envoyer">
+    <input class="bouton" type="submit" name="creation" value="envoyer">
 </form>
 </div>
 </div>
