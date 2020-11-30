@@ -25,18 +25,18 @@
 <div>
     <h2>Mes amis</h2>
    <?php 
-   $sql = "SELECT * FROM user";
-    $q = $pdo->prepare($sql);
-    $q->execute();
-    while($line=$q->fetch()) {
-        $sql = "SELECT * FROM lien WHERE etat='ami'
-        AND ((idUtilisateur1=? AND idUtilisateur2=?) OR ((idUtilisateur1=? AND idUtilisateur2=?)))";
+        $sql = "SELECT * FROM user WHERE id IN ( SELECT user.id FROM user INNER JOIN lien ON idUtilisateur1=user.id AND etat='ami' AND idUTilisateur2=? UNION SELECT user.id FROM user INNER JOIN lien ON idUtilisateur2=user.id AND etat='ami' AND idUTilisateur1=?)";
         $q = $pdo->prepare($sql);
-        $q->execute(array($line['id'],$_SESSION['id'],$_SESSION['id'],$line['id']));
+        $q->execute(array($_SESSION['id'],$_SESSION['id']));
          while($l=$q->fetch()) {
-                echo $line['login'];
+               ?> 
+               
+               <ul>
+                   <?php echo "<li>".$l['login']."</li>"; ?> 
+                </ul>
+               <?php
 
-}
+
 }
             ?>
 </div>
@@ -45,7 +45,7 @@
 <div class="attente">
     <h4>En attente</h4>
     <div>
-    
+    <?php include('traitement/demande.php') ?>
     </div>
 </div>
 
