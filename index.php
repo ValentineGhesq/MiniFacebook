@@ -20,7 +20,7 @@ ob_start(); // Je démarre le buffer de sortie : les données à afficher sont s
 
     <link rel="stylesheet" href="css/style.css">
 
-    <script src="js/jquery-3.2.1.min.js"></script>
+    
 </head>
 
 <body>

@@ -1,28 +1,45 @@
 <?php
-    function prompt($prompt_msg){
-        echo("<script type='text/javascript'> var answer = prompt('".$prompt_msg."'); </script>");
+if (empty($_POST['sub'])) {
+    ?>
+<div>
+    <form method="POST">
+        <input type="text" name="mdp" placeholder="entrer votre mot de passe">
+        <input type="submit" name="sub" value="Confirmer">
+    </form>
+</div>
 
-        $answer = "<script type='text/javascript'> document.write(answer); </script>";
-        return($answer);
+<?php
+}
+$ok=false;
+if (isset($_POST['mdp'])) {
+    $sql = "SELECT * FROM user WHERE id= ? AND mdp = PASSWORD(?)";
+    $q = $pdo->prepare($sql);
+    $q->execute(array($_SESSION['id'], $_POST['mdp']));
+    $line = $q->fetch();
+    if ($line == true) {
+?>
+        <form method="POST" action="index.php?action=changementmdp">
+            <input type="text" name="nouveaumdp" placeholder="nouveau mot de passe" required>
+            <input type="text" name="confirmermdp" placeholder="confirmer mot de passe" required>
+            <input type="submit" name="submit" value="Envoyer">
+        </form>
+<?php
+        
+    } else {
+        $ok=false;
     }
+}
 
-    
-    $prompt_msg = "Nouveau mot de passe";
-    $prompt_msg2 = "confirmez mot de passe";
+if($ok=false){
+    echo "<script type='text/javascript'>";
+    echo "alert('false');";
+    echo "</script>";
+    header("location:" .  $_SERVER['HTTP_REFERER']);
+}
+
+
+
+
+
 
 ?>
-<script> if ( window.confirm( 'Voulez vous vraiment changer de mot de passe ?' ) ) {
-   <?php 
-    $newmdp= prompt($prompt_msg);
-     $confirmmdp= prompt($prompt_msg2);
-
-    if($newmdp == $confirmmdp){
-        $sql = "UPDATE user SET mdp=PASSWORD(?) WHERE id = ?";
-        $query= $pdo->prepare($sql);
-        $query->execute( array($newmdp, $_SESSION['id'])); 
-    }else{
-        echo "alert('mauvais mot de passe')";
-    };
-    
-?> } 
-</script>
