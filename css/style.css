@@ -115,15 +115,7 @@ label {
 
 .tout {
     display: flex;
-   
-}
 
-.gauche {
-    
-}
-
-.droite {
-    
 }
 
 h1 {
@@ -187,6 +179,38 @@ h4 {
     margin-top: 50px;
     padding: 20px;
     width: 300px;
+}
+
+.mur {
+    border-style: solid;
+    border-width: 1px;
+    border-color: #1c9db0;
+    margin-top: 50px;
+    padding: 20px;
+    width: 500px;
+    margin-left: 400px;
+}
+
+.post {
+    display: flex;
+    justify-content: center;
+}
+
+.post p{
+   margin-left: 10px;
+   font-size: 10pt;
+}
+
+.mur h2 {
+  
+}
+
+.mur h3 {
+    font-weight: bold;
+}
+
+.contenus {
+    color: #1c9db0;
 }
 
 footer {

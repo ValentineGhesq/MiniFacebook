@@ -8,10 +8,17 @@ while ($line = $q->fetch()) {
 
     if ($line['image'] == "") {
 ?>
-        <div>
-            <div>
+<form action="" method="get">
+    <div class="mur">
+        
+        <input type="text" name="publication" id="publication" required> 
+        
+    </div>
+</form>
+        <div class="mur">
+            <div class="post">
                 <h3><?= $line['login'] ?></h3>
-                <p><?= $line['dateEcrit'] ?></p><a href='index.php?action=aime&id=<?= $line['id'] ?>'> <img src='divers/pouce1.png' width='5%' alt='pouce'></a>
+                <p>le <?= $line['dateEcrit'] ?></p><a href='index.php?action=aime&id=<?= $line['id'] ?>'> <img src='divers/pouce1.png' width='5%' alt='pouce'></a>
                 <p>
                     <?php
                     $likes = 0;
@@ -24,7 +31,7 @@ while ($line = $q->fetch()) {
                     echo $likes; ?>
                 </p>
             </div>
-            <div>
+            <div class="contenus">
                 <h2><?= $line['titre'] ?></h2>
                 <p><?= $line['contenu'] ?></p>
             </div>
@@ -32,7 +39,7 @@ while ($line = $q->fetch()) {
     <?php
     } else { ?>
         <div>
-            <div>
+            <div >
                 <h3><?= $line['idAmi'] ?></h3>
                 <p><?= $line['dateEcrit'] ?></p> <a href='index.php?action=aime&id=<?= $line['id'] ?>'> <img src='divers/pouce1.png' alt='pouce'></a>
                 <p>
