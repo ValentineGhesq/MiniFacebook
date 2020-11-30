@@ -17,7 +17,10 @@ $listeDesActions = array(
     "post" => "traitement/post.php",
     "amis" => "traitement/amis.php",
     "etatami" => "traitement/etatami.php",
-    "aime" => "traitement/aime.php"
+    "aime" => "traitement/aime.php",
+    "changermdp" => "traitement/changementmdp.php",
+    "changementmdp" => "traitement/changementmdp2.php"
     
     
 );
+?>

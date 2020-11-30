@@ -13,7 +13,7 @@
     $line=$q->fetch() ?>
     <h3>login : <?php echo $_SESSION['login'];?> </h3>
     <h3> mail : <?php echo $line['email'];?></h3>
-    <form method="POST">
+    <form method="POST" action="index.php?action=changermdp">
      <input type='submit' name="changerlemotdepasse" value="changer le mot de passe">
      </form>
 </div>
