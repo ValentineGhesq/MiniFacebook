@@ -1,19 +1,6 @@
-<?php include("traitement/post.php")?>
 
-<div>
+<div >
     <h1>Mon mur</h1>
 </div>
 
-
-
-<form action="">
-    <input type="text" name="publie">
-</form>
-
-<form action="">
-    <input type="text" name="publie">
-</form>
-
-<form action="">
-    <input type="text" name="publie">
-</form>
+<?php include("traitement/post.php")?>

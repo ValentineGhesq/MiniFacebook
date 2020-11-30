@@ -5,7 +5,7 @@
 </div>
 
 <div class="tout">
-<div class="gauche">
+<div>
 <div>
 <?php  $sql = "SELECT * FROM user WHERE id=?";
     $q = $pdo->prepare($sql);
@@ -22,7 +22,7 @@
 
 </div>
 </div>
-<div class="droite">
+<div>
     <h2>Mes amis</h2>
    <?php 
    $sql = "SELECT * FROM user";
