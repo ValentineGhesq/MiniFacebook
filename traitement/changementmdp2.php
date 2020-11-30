@@ -4,8 +4,6 @@ if (isset($_POST['nouveaumdp'])) {
         $sql2 = "UPDATE user set mdp=PASSWORD(?) WHERE id=? ";
         $query = $pdo->prepare($sql2);
         $query->execute(array($_POST['nouveaumdp'], $_SESSION['id']));
-        
-    
         header("location: index.php?action=accueil");
         ?>
         <script type='text/javascript'>
