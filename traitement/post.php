@@ -1,3 +1,13 @@
+
+<form action="index.php?action=newpost&id=<?php echo $_GET['id'] ?> " method="post" >
+    <div class="mur">
+            Choisi une image à Upload:
+        <input type="file" name="filepost">
+        <input type="text" name="titre" id="titre" required class="bordure" placeholder="titre du post"> 
+        <input type="text" name="publication" id="publication" required class="bordure" placeholder="Publie quelque chose..."> 
+        <input type="submit" name="submit" value="nouveau post" >
+    </div>
+</form>
 <?php
 
 $sql = "SELECT * FROM ecrit INNER JOIN user on idAmi=user.id WHERE idAmi=? order by dateEcrit DESC ";
@@ -8,11 +18,7 @@ while ($line = $q->fetch()) {
 
     if ($line['image'] == "") {
 ?>
-<form action="" method="get" >
-    <div class="mur">
-        <input type="text" name="publication" id="publication" required class="bordure"> 
-    </div>
-</form>
+
         <div class="mur">
             <div class="post">
                 <h3><?= $line['login'] ?></h3>
