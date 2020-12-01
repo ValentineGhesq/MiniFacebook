@@ -9,6 +9,172 @@
     font-style: normal;
 }
 
+h1 {
+    text-align: center;
+    font-family: 'aileron';
+    font-weight: lighter;
+    font-size: 30pt;
+}
+
+h2 {
+    font-family: 'aileron';
+    font-weight: normal;
+    font-size: 20pt;
+   
+}
+
+h3 {
+    font-family: 'aileron';
+    font-size: 18pt;
+    font-weight: lighter;
+    margin-bottom: 20px;
+}
+
+h4 {
+    font-family: 'aileron';
+    font-size: 15pt;
+    font-weight: normal;
+}
+
+/*Connexion*/
+
+.titre {
+    color: #1c9db0;
+    font-size: 20pt;
+    font-family: 'Aileron';
+    text-align: center;
+    font-weight: lighter;
+    margin-top: 50px;
+}
+
+.ladiv {
+    display: flex;
+    justify-content: space-around;
+    padding-left: 250px;
+    padding-right: 250px;
+}
+.connexion {
+    margin-top: 50px;
+    padding: 20px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #1c9db0;
+}
+
+.connexion h3 {
+    text-align: center;
+}
+
+label {
+    font-family: 'aileron';
+    font-weight: lighter;
+    font-size: 12pt;
+    margin-top: 10px;
+}
+
+.nouvcompt {
+    margin-top: 50px;
+    padding: 20px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #1c9db0;
+}
+
+.nouvcompt h3 {
+    text-align: center;
+}
+
+.bouton {
+    background-color: white;
+    font-family: 'aileron';
+    font-weight: lighter;
+    color: #1c9db0;
+    text-transform: capitalize;
+    border-color: #1c9db0;
+    padding: 5px;
+    display: block;
+    margin: auto;
+}
+
+/*Mon mur*/
+
+.mur {
+    border-style: solid;
+    border-width: 1px;
+    border-color: #1c9db0;
+    margin-top: 50px;
+    padding: 20px;
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.bordure {
+    border-style: none;
+    text-align: left;
+    font-family: 'aileron';
+    color:#1c9db0;
+}
+
+.post {
+    display: flex;
+    justify-content: center;
+    color: black;
+}
+
+.post p{
+   margin-left: 10px;
+   font-size: 10pt;
+}
+
+.mur h3 {
+    font-weight: bold;
+}
+
+.contenus {
+    color: #1c9db0;
+}
+
+/*Profil*/
+
+.tout {
+    display: flex;
+}
+
+.carre {
+    display: flex;
+    justify-content: center;
+    height: 250px;
+    text-align: center;
+}
+
+.attente {
+    border-style: solid;
+    border-width: 1px;
+    border-color: #1c9db0;
+    margin-top: 50px;
+    padding: 20px;
+    width: 300px;
+}
+
+.amis {
+    border-style: solid;
+    border-width: 1px;
+    border-color: #1c9db0;
+    margin-top: 50px;
+    padding: 20px;
+    width: 300px;
+}
+
+.recherche {
+    border-style: solid;
+    border-width: 1px;
+    border-color: #1c9db0;
+    margin-top: 50px;
+    padding: 20px;
+    width: 300px;
+}
+
  .tete {
     color: white;
     padding: 20px;
@@ -51,184 +217,30 @@
     color: #1c9db0;
     text-decoration: none;
     font-size: 15pt;
-    
 }
 
-.titre {
-    color: #1c9db0;
-    font-size: 20pt;
-    font-family: 'Aileron';
-    text-align: center;
-    font-weight: lighter;
-    margin-top: 50px;
+/*page erreur 404*/
+
+.pls {
+    width: 400px;
+    height: 300px;
 }
-.ladiv {
+
+p {
+    font-family: 'aileron';
     display: flex;
-    justify-content: space-around;
-    padding-left: 250px;
-    padding-right: 250px;
-}
-.connexion {
-    margin-top: 50px;
-    padding: 20px;
-    border-style: solid;
-    border-width: 1px;
-    border-color: #1c9db0;
-}
-
-.connexion h3 {
-    text-align: center;
-}
-
-
-label {
-    font-family: 'aileron';
-    font-weight: lighter;
-    font-size: 12pt;
-    margin-top: 10px;
-}
-
-.nouvcompt {
-    margin-top: 50px;
-    padding: 20px;
-    border-style: solid;
-    border-width: 1px;
-    border-color: #1c9db0;
-    
-}
-
-.nouvcompt h3 {
-    text-align: center;
-}
-
-.bouton {
-    background-color: white;
-    font-family: 'aileron';
-    font-weight: lighter;
-    color: #1c9db0;
-    text-transform: capitalize;
-    border-color: #1c9db0;
-    padding: 5px;
-    display: block;
-    margin: auto;
-}
-
-.tout {
-    display: flex;
-
-}
-
-h1 {
-    text-align: center;
-    font-family: 'aileron';
-    font-weight: lighter;
-    font-size: 30pt;
-}
-
-h2 {
-    font-family: 'aileron';
-    font-weight: normal;
-    font-size: 20pt;
-   
-}
-
-h3 {
-    font-family: 'aileron';
-    font-size: 18pt;
-    font-weight: lighter;
-    margin-bottom: 20px;
-}
-
-h4 {
-    font-family: 'aileron';
+    justify-content: center;
     font-size: 15pt;
-    font-weight: normal;
 }
 
-.carre {
-    display: flex;
-    justify-content: center;
-    height: 250px;
-    text-align: center;
-    
-}
-
-.attente {
-    border-style: solid;
-    border-width: 1px;
-    border-color: #1c9db0;
-    margin-top: 50px;
-    padding: 20px;
-    width: 300px;
-    
-}
-
-.amis {
-    border-style: solid;
-    border-width: 1px;
-    border-color: #1c9db0;
-    margin-top: 50px;
-    padding: 20px;
-    width: 300px;
-}
-
-.recherche {
-    border-style: solid;
-    border-width: 1px;
-    border-color: #1c9db0;
-    margin-top: 50px;
-    padding: 20px;
-    width: 300px;
-}
-
-.mur {
-    border-style: solid;
-    border-width: 1px;
-    border-color: #1c9db0;
-    margin-top: 50px;
-    padding: 20px;
-    width: 500px;
-    margin-left: auto;
-    margin-right: auto;
-
-}
-
-.bordure {
-    border-style: none;
-    text-align: left;
-    font-family: 'aileron';
-    color:#1c9db0;
-}
-
-.post {
-    display: flex;
-    justify-content: center;
-    color: black;
-}
-
-.post p{
-   margin-left: 10px;
-   font-size: 10pt;
-}
-
-.mur h2 {
-  
-}
-
-.mur h3 {
-    font-weight: bold;
-}
-
-.contenus {
-    color: #1c9db0;
-}
+/*footer*/
 
 footer {
     background-color: #1c9db0;
-    margin: 0px;
-    position:absolute;
+    position: relative;
     bottom:0;
     width:100%;
     padding-top:50px;
+    margin-top: 60px;
     height:30px;
 }
