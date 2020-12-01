@@ -8,11 +8,9 @@ while ($line = $q->fetch()) {
 
     if ($line['image'] == "") {
 ?>
-<form action="" method="get">
+<form action="" method="get" >
     <div class="mur">
-        
-        <input type="text" name="publication" id="publication" required> 
-        
+        <input type="text" name="publication" id="publication" required class="bordure"> 
     </div>
 </form>
         <div class="mur">

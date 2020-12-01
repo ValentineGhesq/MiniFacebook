@@ -188,12 +188,22 @@ h4 {
     margin-top: 50px;
     padding: 20px;
     width: 500px;
-    margin-left: 400px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.bordure {
+    border-style: none;
+    text-align: left;
+    font-family: 'aileron';
+    color:#1c9db0;
 }
 
 .post {
     display: flex;
     justify-content: center;
+    color: black;
 }
 
 .post p{
