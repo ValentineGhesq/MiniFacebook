@@ -14,11 +14,11 @@ if(isset($_POST["submit"]) && !empty($_FILES["file"]["name"])){
         // Upload file to server
         if(move_uploaded_file($_FILES["file"]["tmp_name"], $targetFilePath)){
             // Insert image file name into database
-            $sql =" INSERT into user(avatar) VALUES('".$fileName."') WHERE id=?";
+            $sql =" UPDATE user SET avatar='".$fileName."' WHERE id=?";
             $q = $pdo->prepare($sql);
              $q->execute(array($_SESSION['id']));
 
-            if($insert){
+            if($sql){
                 $statusMsg = "The file ".$fileName. " has been uploaded successfully.";
             }else{
                 $statusMsg = "File upload failed, please try again.";
@@ -34,5 +34,11 @@ if(isset($_POST["submit"]) && !empty($_FILES["file"]["name"])){
 }
 
 // Display status message
-echo $statusMsg;
+?>
+<script>
+alert('<?php echo $statusMsg ?>')
+</script>
+
+<?php
+    header("location:" .  $_SERVER['HTTP_REFERER']);
 ?>

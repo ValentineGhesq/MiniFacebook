@@ -6,21 +6,22 @@
     <div>
         <div>
             <?php
-              $sql = "SELECT * FROM user WHERE id=?";
-             $q = $pdo->prepare($sql);
-             $q->execute(array($_SESSION['id']));
-             $line = $q->fetch() ;
-             if($line['avatar']=""){
+              $sql2 = "SELECT * FROM user WHERE id=?";
+             $query = $pdo->prepare($sql2);
+             $query->execute(array($_SESSION['id']));
+             $line2 = $query->fetch() ;
+             if($line2['avatar']==""){
                 ?>
-                <form action="index.php?action=upload&id=<?php echo $line['id'] ?> " method="post" enctype="multipart/form-data">
+                <form action="index.php?action=upload&id=<?php echo $line2['id'] ?> " method="post" enctype="multipart/form-data">
                      Choisi un avatar à Upload:
                      <input type="file" name="file">
                      <input type="submit" name="submit" value="Upload">
                 </form>
                 <?php
              }else{
-                 ?><img src='<?php echo $line['avatar'] ?>' alt='avatar'>
-                    <form action="index.php?action=upload&id=<?php echo $line['id'] ?>" method="post" enctype="multipart/form-data">
+                 ?>
+                 <img width='10%' src='avatar/<?php echo $line2['avatar']?>' alt='avatar'>
+                    <form action="index.php?action=upload&id=<?php echo $line2['id'] ?>" method="post" enctype="multipart/form-data">
                      Changer d'avatar:
                      <input type="file" name="file">
                      <input type="submit" name="submit" value="Upload">
@@ -52,12 +53,21 @@
         $q = $pdo->prepare($sql);
         $q->execute(array($_SESSION['id'], $_SESSION['id']));
         while ($l = $q->fetch()) {
-        ?>
-
+            ?>
             <ul>
-                <?php echo "<li>" . $l['login'] . "</li>"; ?>
-            </ul>
+            <?php
+            if($l['avatar']==""){
+                echo "<li>" . $l['login'] . "</li>";
+            }else{
+        ?>
+                <?php echo "<li> <img width='1%' src='avatar/". $l['avatar']."' alt='avatar'>" . $l['login'] . "</li>"; ?>
+            
         <?php
+            }
+            ?>
+            <ul>
+            <?php
+
 
 
         }
