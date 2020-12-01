@@ -19,7 +19,8 @@ $listeDesActions = array(
     "etatami" => "traitement/etatami.php",
     "aime" => "traitement/aime.php",
     "changermdp" => "traitement/changementmdp.php",
-    "changementmdp" => "traitement/changementmdp2.php"
+    "changementmdp" => "traitement/changementmdp2.php",
+    "upload"=> "traitement/upload.php"
     
     
 );
