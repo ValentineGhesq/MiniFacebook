@@ -25,7 +25,10 @@ $ok = false;
         // A completer. Il faut récupérer une ligne, si il y en a pas ca veut dire que lon est pas ami avec cette personne
     
     if($ok==false) {
-        echo "Vous n êtes pas encore ami, vous ne pouvez voir son mur !!";       
+        echo "<script type='text/javascript'>";
+        echo "alert('vous n'êtes pas encore ami vous ne pouvez pas voir son mur!');";
+        echo "window.location.href='index.php?action=accueil&id=".$_SESSION['id']."'";
+        echo "</script>";       
     } else {
         header("location: index.php?action=mur&id=".$_GET['id']."");
 }

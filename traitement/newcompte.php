@@ -19,6 +19,8 @@ if($line==true){
   echo "</script>";
 
 }else{
+  if (isset($_POST['mdp'])) {
+    if ($_POST['mdp'] == $_POST['confirmerlemdp']) {
 
 
  $sql ="INSERT INTO user(login,mdp,email,remember,avatar) VALUES( ? , PASSWORD(?), ? ,'','')";
@@ -34,6 +36,14 @@ echo "window.location.href='index.php?action=login';";
 echo "</script>";
 
 
+}else{
+  echo "<script type='text/javascript'>";
+echo "alert('les mots de passe ne correspondent pas');";
+echo "window.location.href='index.php?action=login';";
+echo "</script>";
+
+}
+}
 }
 
 ?>
