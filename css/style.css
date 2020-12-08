@@ -120,6 +120,7 @@ label {
     display: flex;
     justify-content: center;
     color: black;
+    background-color: chartreuse;
 }
 
 .post p{
@@ -135,6 +136,17 @@ label {
     color: #1c9db0;
 }
 
+.post_1 {
+    font-family: 'aileron';
+    border-style: none;
+    font-size: 15pt;
+    display: flex;
+}
+
+.post_2 {
+    font-family: 'aileron';
+    border-style: none;
+}
 /*Profil*/
 
 .tout {
@@ -237,7 +249,7 @@ p {
 
 footer {
     background-color: #1c9db0;
-    position: absolute;
+    position: relative;
     bottom:0;
     width:100%;
     padding-top:50px;

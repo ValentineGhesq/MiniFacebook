@@ -1,13 +1,15 @@
 
 <form action="index.php?action=newpost&id=<?php echo $_GET['id'] ?> " method="post" enctype="multipart/form-data">
     <div class="mur">
-            Choisi une image à Upload:
-        <input type="file" name="filepost">
-        <input type="text" name="titre" id="titre" required class="bordure" placeholder="titre du post"> 
-        <input type="text" name="publication" id="publication" required class="bordure" placeholder="Publie quelque chose..."> 
-        <input type="submit" name="submit" value="nouveau post" >
+            <p>Choisi une image à Upload:</p>
+        <input  class="bouton" type="file" name="filepost">
+            <br/>
+        <input class="post_1" type="text" name="titre" id="titre" required class="bordure" placeholder="Titre du post"> 
+        <input class="post_2" type="text" name="publication" id="publication" required class="bordure" placeholder="Publie quelque chose..."> 
+        <input class="bouton" type="submit" name="submit" value="nouveau post" >
     </div>
 </form>
+
 <?php
 
 $sql = "SELECT ecrit.id AS ecrit_id , titre, contenu, dateEcrit, image, idAuteur, idAmi, us1.id AS us1_id , us1.login AS us1_login , us1.avatar AS us1_avatar, us2.id AS us2_id, us2.login AS us2_login, us2.avatar AS us2_avatar FROM ecrit INNER JOIN user AS us1 on idAmi=us1.id  INNER JOIN user AS us2 on idAuteur=us2.id WHERE idAmi=? order by dateEcrit DESC";
