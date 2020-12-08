@@ -6,28 +6,28 @@
     <div>
         <div>
             <?php
-              $sql2 = "SELECT * FROM user WHERE id=?";
-             $query = $pdo->prepare($sql2);
-             $query->execute(array($_SESSION['id']));
-             $line2 = $query->fetch() ;
-             if($line2['avatar']==""){
-                ?>
+            $sql2 = "SELECT * FROM user WHERE id=?";
+            $query = $pdo->prepare($sql2);
+            $query->execute(array($_SESSION['id']));
+            $line2 = $query->fetch();
+            if ($line2['avatar'] == "") {
+            ?>
                 <form action="index.php?action=upload&id=<?php echo $line2['id'] ?> " method="post" enctype="multipart/form-data">
-                     Choisi un avatar à Upload:
-                     <input type="file" name="file">
-                     <input type="submit" name="submit" value="Upload">
+                    Choisi un avatar à Upload:
+                    <input type="file" name="file">
+                    <input type="submit" name="submit" value="Upload">
                 </form>
-                <?php
-             }else{
-                 ?>
-                 <img width='10%' src='avatar/<?php echo $line2['avatar']?>' alt='avatar'>
-                    <form action="index.php?action=upload&id=<?php echo $line2['id'] ?>" method="post" enctype="multipart/form-data">
-                     Changer d'avatar:
-                     <input type="file" name="file">
-                     <input type="submit" name="submit" value="Upload">
+            <?php
+            } else {
+            ?>
+                <img width='10%' src='avatar/<?php echo $line2['avatar'] ?>' alt='avatar'>
+                <form action="index.php?action=upload&id=<?php echo $line2['id'] ?>" method="post" enctype="multipart/form-data">
+                    Changer d'avatar:
+                    <input type="file" name="file">
+                    <input type="submit" name="submit" value="Upload">
                 </form>
-                 <?php
-             }
+            <?php
+            }
             ?>
         </div>
         <div>
@@ -41,63 +41,65 @@
                 <input type='submit' name="changerlemotdepasse" value="changer le mot de passe">
             </form>
             <?php
-            if(isset($_POST['changerlemotdepasse'])){
+            $ok = true;
+            if (isset($_POST['changerlemotdepasse'])) {
+
                 if (empty($_POST['sub'])) {
-                    ?>
-                <div>
-                    <form method="POST">
-                        <input type="text" name="mdp" placeholder="entrer votre mot de passe">
-                        <input type="submit" name="sub" value="Confirmer">
-                    </form>
-                </div>
-                
-                <?php
+            ?>
+                    <div>
+                        <form method="POST">
+                            <input type="password" name="mdp" placeholder="entrer votre mot de passe">
+                            <input type="submit" name="sub" value="Confirmer">
+                        </form>
+                    </div>
+
+                    <?php
                 }
-                $ok=false;
-                if(isset($_POST['sub'])){
-                    if (isset($_POST['mdp'])) {
-                        $sql = "SELECT * FROM user WHERE id= ? AND mdp = PASSWORD(?)";
-                        $q = $pdo->prepare($sql);
-                        $q->execute(array($_SESSION['id'], $_POST['mdp']));
-                        $line = $q->fetch();
-                        if ($line == true) {
+            }
+            if (isset($_POST['sub'])) {
+                if (isset($_POST['mdp'])) {
+                    $sql = "SELECT * FROM user WHERE id= ? AND mdp = PASSWORD(?)";
+                    $q = $pdo->prepare($sql);
+                    $q->execute(array($_SESSION['id'], $_POST['mdp']));
+                    $line = $q->fetch();
+                    if ($line == true) {
                     ?>
-                            <form method="POST">
-                                <input type="text" name="nouveaumdp" placeholder="nouveau mot de passe" required>
-                                <input type="text" name="confirmermdp" placeholder="confirmer mot de passe" required>
-                                <input type="submit" name="changemdp" value="Envoyer">
-                            </form>
-                    
-                                    <script type='text/javascript'>
-                                         alert('mot de passe changé');
-                                    </script>
-                                    <?php
-                                    
-                                }else{
-                                    echo "different mot de passe";
-                                }
-                            }
-                        
-                        } else {
-                            $ok=false;
-                        }
-                       
-                            if(isset($_POST['changemdp'])) {
-                                if ($_POST['nouveaumdp'] == $_POST['confirmermdp']) {
-                                    $sql2 = "UPDATE user set mdp=PASSWORD(?) WHERE id=? ";
-                                    $query = $pdo->prepare($sql2);
-                                    $query->execute(array($_POST['nouveaumdp'], $_SESSION['id']));
-                                    
-                                    
-                    }
-                    
-                    if($ok==false){
-                        echo "<script type='text/javascript'>";
-                        echo "alert('false');";
-                        echo "</script>";
-                    }
+                        <form method="POST">
+                            <input type="password" name="nouveaumdp" placeholder="nouveau mot de passe" required>
+                            <input type="password" name="confirmermdp" placeholder="confirmer mot de passe" required>
+                            <input type="submit" name="changemdp" value="Envoyer">
+                        </form>
+
+                    <?php
+                        $ok = true;
+                    } else {
+                        $ok = false;
+                    };
+                };
+            };
+
+            if ($ok == false) {
+                echo "<script type='text/javascript'>";
+                echo "alert('Mauvais mot de passe');";
+                echo "</script>";
+            }
+
+            if (isset($_POST['changemdp'])) {
+                if ($_POST['nouveaumdp'] == $_POST['confirmermdp']) {
+                    $sql2 = "UPDATE user set mdp=PASSWORD(?) WHERE id=? ";
+                    $query = $pdo->prepare($sql2);
+                    $query->execute(array($_POST['nouveaumdp'], $_SESSION['id']));
+                    ?>
+                    <script type='text/javascript'>
+                        alert('mot de passe changé');
+                    </script>
+            <?php
+
+                } else {
+                    echo "different mot de passe";
                 }
-        }
+            }
+
 
             ?>
         </div>
@@ -113,32 +115,34 @@
         $q = $pdo->prepare($sql);
         $q->execute(array($_SESSION['id'], $_SESSION['id']));
         while ($l = $q->fetch()) {
-            ?>
-            <ul>
-            <?php
-            if($l['avatar']==""){
-                echo "<li>" . $l['login'] . "</li>";
-            }else{
         ?>
-                <?php echo "<li> <img width='1%' src='avatar/". $l['avatar']."' alt='avatar'>" . $l['login'] . "</li>"; ?>
-            
-        <?php
+            <ul>
+                <?php
+                if ($l['avatar'] == "") {
+                    echo "<li>" . $l['login'] . "</li>";
+                } else {
+                ?>
+                    <?php echo "<li> <img width='1%' src='avatar/" . $l['avatar'] . "' alt='avatar'>" . $l['login'] . "</li>"; ?>
+
+                <?php
+                }
+                ?>
+                <ul>
+                <?php
+
+
+
             }
-            ?>
-            <ul>
-            <?php
-
-
-
-        }
-        ?>
+                ?>
     </div>
 </div>
 <div class="carre">
     <div class="attente">
         <h4>En attente</h4>
         <div>
-            <?php include('traitement/demande.php') ?>
+            <ul>
+                <?php include('traitement/demande.php') ?>
+            </ul>
         </div>
     </div>
 

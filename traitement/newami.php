@@ -27,6 +27,7 @@ $q->execute(array($_SESSION['id'],$_GET['id']));
     echo "</script>";
 
 }
+header("location:".  $_SERVER['HTTP_REFERER']);
 
 
 

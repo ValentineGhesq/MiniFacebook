@@ -10,7 +10,7 @@ if(isset($_POST['accepter'])){
     $q->execute(array($_SESSION['id'],$_GET['id'],$_GET['id'],$_SESSION['id']));
     ?>
     <script type='text/javascript'>
-    alert("vous avez refusé l'amitié");
+            alert('vous avez banni cette personne !');
     </script>
     
     <?php

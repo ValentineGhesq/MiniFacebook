@@ -3,8 +3,8 @@ $sql = "SELECT user.* FROM user INNER JOIN lien ON user.id=idUtilisateur2 AND et
 $q = $pdo->prepare($sql);
 $q->execute(array($_SESSION['id']));
  while($l=$q->fetch()) {
-            echo $l['login'];
-
+         ?> <li> <?php echo $l['login'] ?> </li>
+<?php
 }
 
 

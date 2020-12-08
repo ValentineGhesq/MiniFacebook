@@ -1,8 +1,8 @@
 <?php
 
-$sql = "SELECT * FROM user WHERE id NOT IN ( SELECT user.id FROM user INNER JOIN lien ON idUtilisateur1=user.id  AND idUTilisateur2=? UNION SELECT user.id FROM user INNER JOIN lien ON idUtilisateur2=user.id  AND idUTilisateur1=?)";
+$sql = "SELECT * FROM user WHERE id NOT IN ( SELECT user.id FROM user INNER JOIN lien ON idUtilisateur1=user.id  AND idUTilisateur2=? UNION SELECT user.id FROM user INNER JOIN lien ON idUtilisateur2=user.id  AND idUTilisateur1=? UNION SELECT user.id from user WHERE id = ?)";
 $query = $pdo->prepare($sql);
-$query->execute(array($_SESSION['id'], $_SESSION['id']));
+$query->execute(array($_SESSION['id'], $_SESSION['id'], $_SESSION['id']));
 while ($line = $query->fetch()) {
     if (isset($_POST['recherche'])) {
         $recherche = $_POST['recherche'];
