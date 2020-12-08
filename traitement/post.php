@@ -1,5 +1,5 @@
 
-<form action="index.php?action=newpost&id=<?php echo $_GET['id'] ?> " method="post" >
+<form action="index.php?action=newpost&id=<?php echo $_GET['id'] ?> " method="post" enctype="multipart/form-data">
     <div class="mur">
             Choisi une image à Upload:
         <input type="file" name="filepost">

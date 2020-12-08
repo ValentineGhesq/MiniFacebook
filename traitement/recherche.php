@@ -8,12 +8,12 @@ while ($line = $query->fetch()) {
         $recherche = $_POST['recherche'];
         if ((strstr($line['login'], $recherche) == TRUE)) {
 ?>
-            <form action="index.php?action=newami&id=<?php echo $line['id'] ?>" method="GET">
+            
                 <?php
                     echo $line['login'];
                 ?>
-                 <input type="submit" value="demander en ami">
-            </form>
+        
+            <a href="index.php?action=newami&id=<?php echo $line['id'] ?>" > demander en ami </a>
 <?php
         };
     }

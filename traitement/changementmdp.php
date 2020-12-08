@@ -11,6 +11,7 @@ if (empty($_POST['sub'])) {
 <?php
 }
 $ok=false;
+if(isset($_POST['sub'])){
 if (isset($_POST['mdp'])) {
     $sql = "SELECT * FROM user WHERE id= ? AND mdp = PASSWORD(?)";
     $q = $pdo->prepare($sql);
@@ -30,12 +31,14 @@ if (isset($_POST['mdp'])) {
     }
 }
 
+
 if($ok==false){
     echo "<script type='text/javascript'>";
     echo "alert('false');";
     echo "</script>";
-    header("location:" .  $_SERVER['HTTP_REFERER']);
 }
+}
+
 
 
 

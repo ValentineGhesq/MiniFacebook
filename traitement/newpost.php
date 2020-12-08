@@ -1,6 +1,6 @@
 <?php
 $image = "";
-if(isset($_POST["submit"]) && !empty($_FILES["filepost"]["name"])){
+if(!empty($_FILES["filepost"])){
 $statusMsg = '';
 
 
@@ -8,7 +8,6 @@ $targetDir = "image/";
 $fileName = basename($_FILES["filepost"]["name"]);
 $targetFilePath = $targetDir . $fileName;
 $fileType = pathinfo($targetFilePath,PATHINFO_EXTENSION);
-
     
     $allowTypes = array('jpg','png','jpeg','gif','pdf');
     if(in_array($fileType, $allowTypes)){
