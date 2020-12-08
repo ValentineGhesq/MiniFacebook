@@ -30,7 +30,7 @@ if (isset($_POST['mdp'])) {
     }
 }
 
-if($ok=false){
+if($ok==false){
     echo "<script type='text/javascript'>";
     echo "alert('false');";
     echo "</script>";
