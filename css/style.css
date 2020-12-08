@@ -237,7 +237,7 @@ p {
 
 footer {
     background-color: #1c9db0;
-    position: relative;
+    position: absolute;
     bottom:0;
     width:100%;
     padding-top:50px;
