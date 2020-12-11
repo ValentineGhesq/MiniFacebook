@@ -119,10 +119,13 @@
             <ul>
                 <?php
                 if ($l['avatar'] == "") {
-                    echo "<li>" . $l['login'] . "</li>";
+                    ?>
+                    <li><a href="index.php?action=mur&id=<?= $l['id'] ?>"> <?php echo $l['login'] ?> </a></li>
+
+                <?php
                 } else {
                 ?>
-                    <?php echo "<li> <img width='1%' src='avatar/" . $l['avatar'] . "' alt='avatar'>" . $l['login'] . "</li>"; ?>
+                    <li> <img width='10%' src='avatar/<?= $l['avatar'] ?>' alt='avatar'> <a href="index.php?action=mur&id=<?= $l['id'] ?>"> <?php echo $l['login'] ?> </a></li>
 
                 <?php
                 }
