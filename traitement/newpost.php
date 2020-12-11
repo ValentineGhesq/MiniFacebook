@@ -17,7 +17,7 @@ $fileType = pathinfo($targetFilePath,PATHINFO_EXTENSION);
             $image=$fileName;
             
             if($image){
-                $statusMsg = "The file ".$fileName. " has been uploaded successfully.";
+               
             }else{
                 $statusMsg = "File upload failed, please try again.";
             } 
@@ -27,12 +27,16 @@ $fileType = pathinfo($targetFilePath,PATHINFO_EXTENSION);
     }else{
         $statusMsg = 'Sorry, only JPG, JPEG, PNG, GIF, & PDF files are allowed to upload.';
     }
+    if($image!=""){
+        if($statusMsg!= ''){
     ?>
+
     <script type="text/javascript">
         alert('<?php echo $statusMsg ?>');
     </script>
     <?php
-    
+    }
+}
 }
 ?>
 
@@ -41,6 +45,8 @@ $fileType = pathinfo($targetFilePath,PATHINFO_EXTENSION);
 $sql ="INSERT INTO ecrit(titre,contenu,dateEcrit,image,idAuteur,idAmi) VALUES( ? ,? , NOW() ,'".$image."',?,?) ";
 $query = $pdo->prepare($sql);// Etape 1  : preparation
 $query->execute(array($_POST['titre'],$_POST['publication'], $_SESSION['id'], $_GET['id']));
+
+header("location:" .  $_SERVER['HTTP_REFERER']);
 
 
 ?>

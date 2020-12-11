@@ -20,7 +20,8 @@ $listeDesActions = array(
     "aime" => "traitement/aime.php",
     "changermdp" => "traitement/changementmdp.php",
     "changementmdp" => "traitement/changementmdp2.php",
-    "upload"=> "traitement/upload.php"
+    "upload"=> "traitement/upload.php",
+    "efface" => "traitement/close.php"
     
     
 );

@@ -1,12 +1,11 @@
-
 <form action="index.php?action=newpost&id=<?php echo $_GET['id'] ?> " method="post" enctype="multipart/form-data">
     <div class="mur">
-            <p>Choisi une image à Upload:</p>
-        <input  class="bouton" type="file" name="filepost">
-            <br/>
-        <input class="post_1" type="text" name="titre" id="titre" required class="bordure" placeholder="Titre du post"> 
-        <input class="post_2" type="text" name="publication" id="publication" required class="bordure" placeholder="Publie quelque chose..."> 
-        <input class="bouton" type="submit" name="submit" value="nouveau post" >
+        <p>Choisi une image à Upload:</p>
+        <input class="bouton" type="file" name="filepost">
+        <br />
+        <input class="post_1" type="text" name="titre" id="titre" required class="bordure" placeholder="Titre du post">
+        <input class="post_2" type="text" name="publication" id="publication" required class="bordure" placeholder="Publie quelque chose...">
+        <input class="bouton" type="submit" name="submitpost" value="nouveau post">
     </div>
 </form>
 
@@ -24,7 +23,8 @@ while ($line = $q->fetch()) {
         <div class="mur">
             <div class="post">
                 <h3><?= $line['us2_login'] ?></h3>
-                <p>le <?= $line['dateEcrit'] ?></p><a href='index.php?action=aime&id=<?= $line['ecrit_id'] ?>'> <img src='divers/pouce1.png' width='5%' alt='pouce'></a>
+                <p>le <?= $line['dateEcrit'] ?></p>
+                <a href='index.php?action=aime&id=<?= $line['ecrit_id'] ?>'> <img src='divers/pouce1.png' width='5%' alt='pouce'></a>
                 <p>
                     <?php
                     $likes = 0;
@@ -36,6 +36,21 @@ while ($line = $q->fetch()) {
                     };
                     echo $likes; ?>
                 </p>
+
+                <?php
+                if ($_GET['id'] == $_SESSION['id']) {
+                ?>
+                    <a href='index.php?action=efface&id=<?php echo $line['ecrit_id'] ?>'> <img src="divers/croix.png" width='30%' alt="close"> </a>
+                    <?php
+                } else {
+                    if ($line['idAuteur'] == $_SESSION['id']) {
+                    ?>
+                        <a href='index.php?action=efface&id=<?php echo $line['ecrit_id'] ?>'> <img src="divers/croix.png" width='30%' alt="close"> </a>
+                <?php
+
+                    }
+                }
+                ?>
             </div>
             <div class="contenus">
                 <h2><?= $line['titre'] ?></h2>
@@ -44,25 +59,40 @@ while ($line = $q->fetch()) {
         </div>
     <?php
     } else { ?>
-        <div>
-            <div >
+        <div class="mur">
+            <div class="post">
                 <h3><?= $line['us2_login'] ?></h3>
-                <p><?= $line['dateEcrit'] ?></p> <a href='index.php?action=aime&id=<?= $line['id'] ?>'> <img src='divers/pouce1.png' alt='pouce'></a>
+                <p>le <?= $line['dateEcrit'] ?></p>
+                <a href='index.php?action=aime&id=<?= $line['ecrit_id'] ?>'> <img src='divers/pouce1.png' width='5%' alt='pouce'></a>
                 <p>
                     <?php
                     $likes = 0;
                     $s = "SELECT * FROM aime INNER JOIN ecrit on idEcrit=ecrit.id WHERE idEcrit=? order by dateEcrit DESC ";
                     $query = $pdo->prepare($s);
-                    $query->execute(array($line['id']));
+                    $query->execute(array($line['ecrit_id']));
                     while ($lines = $query->fetch()) {
                         $likes = $likes + 1;
                     };
                     echo $likes; ?>
                 </p>
+                <?php
+                if ($_GET['id'] == $_SESSION['id']) {
+                ?>
+                    <a href='index.php?action=efface&id=<?php echo $line['ecrit_id'] ?>'> <img src="divers/croix.png" width='30%' alt="close"> </a>
+                    <?php
+                } else {
+                    if ($line['idAuteur'] == $_SESSION['id']) {
+                    ?>
+                        <a href='index.php?action=efface&id=<?php echo $line['ecrit_id'] ?>'> <img src="divers/croix.png" width='30%' alt="close"> </a>
+                <?php
+
+                    }
+                }
+                ?>
             </div>
             <div>
-                <div><img src='<?= $line['image'] ?>' alt='imagepost'> </div>
-                <div>
+                <div><img src='image/<?= $line['image'] ?>' alt='imagepost'> </div>
+                <div class="contenus">
                     <h2><?= $line['titre'] ?></h2>
                     <p><?= $line['contenu'] ?></p>
                 </div>
