@@ -6,7 +6,11 @@ $query->execute(array($_SESSION['id'], $_SESSION['id'], $_SESSION['id']));
 while ($line = $query->fetch()) {
     if (isset($_POST['recherche'])) {
         $recherche = $_POST['recherche'];
-        if ((strstr($line['login'], $recherche) == TRUE)) {
+        $login = $line['login'];
+        $login = strtolower($login);
+        $recherche = strtolower($recherche);
+
+        if ((strstr($login, $recherche) == TRUE)) {
 ?>
             
                 <?php
