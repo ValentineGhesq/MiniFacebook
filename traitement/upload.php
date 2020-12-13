@@ -1,19 +1,19 @@
 <?php
 $statusMsg = '';
 
-// File upload path
+
 $targetDir = "avatar/";
 $fileName = basename($_FILES["file"]["name"]);
 $targetFilePath = $targetDir . $fileName;
 $fileType = pathinfo($targetFilePath,PATHINFO_EXTENSION);
 
 if(isset($_POST["submit"]) && !empty($_FILES["file"]["name"])){
-    // Allow certain file formats
+   
     $allowTypes = array('jpg','png','jpeg','gif','pdf');
     if(in_array($fileType, $allowTypes)){
-        // Upload file to server
+       
         if(move_uploaded_file($_FILES["file"]["tmp_name"], $targetFilePath)){
-            // Insert image file name into database
+            
             $sql =" UPDATE user SET avatar='".$fileName."' WHERE id=?";
             $q = $pdo->prepare($sql);
              $q->execute(array($_SESSION['id']));
@@ -40,5 +40,5 @@ alert('<?php echo $statusMsg ?>')
 </script>
 
 <?php
-    header("location:" .  $_SERVER['HTTP_REFERER']);
+    header("location: index.php?action=accueil&id=".$_SESSION['id']);
 ?>

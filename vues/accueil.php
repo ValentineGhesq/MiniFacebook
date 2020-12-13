@@ -12,7 +12,7 @@
             $line2 = $query->fetch();
             if ($line2['avatar'] == "") {
             ?>
-                <form action="index.php?action=upload&id=<?php echo $line2['id'] ?> " method="post" enctype="multipart/form-data">
+                <form action="index.php?action=upload&id=<?php echo $line2['id'] ?>" method="post" enctype="multipart/form-data">
                     Choisi un avatar à Upload:
                     <input class="bouton" type="file" name="file">
                     <input class="bouton" type="submit" name="submit" value="Upload">
