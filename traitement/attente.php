@@ -7,7 +7,7 @@ while($line=$q->fetch()) {
                 echo "<ul>";
                   
                     echo "<li>".$line['login']."<form name='ok' action='index.php?action=etatami&id=".$line['id']."' method='POST'>
-                    <input type='submit' name='accepter' value='accepter'><input type='submit' name='refuser' value='refuser'>
+                    <input class='bouton4' type='submit' name='accepter' value='accepter'><input class='bouton4' type='submit' name='refuser' value='refuser'>
                     </form></li>";
                     
                 echo "</ul>";

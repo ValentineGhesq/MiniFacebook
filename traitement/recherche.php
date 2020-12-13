@@ -17,7 +17,7 @@ while ($line = $query->fetch()) {
                     echo $line['login'];
                 ?>
         
-            <a href="index.php?action=newami&id=<?php echo $line['id'] ?>" > demander en ami </a>
+            <a class="bouton3" href="index.php?action=newami&id=<?php echo $line['id'] ?>" > Demander en ami </a><br/>
 <?php
         };
     }

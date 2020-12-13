@@ -32,3 +32,5 @@
 </form>
 </div>
 </div>
+
+<div class="titre"><p>Ceci est notre projet Mini-Facebook de deuxième année, bonne visite !!</p></div>

@@ -18,6 +18,10 @@ html {
     height: 100%;
 }
 
+.ensemble {
+    padding-bottom: 10%;
+}
+
 h1 {
     text-align: center;
     font-family: 'aileron';
@@ -54,6 +58,11 @@ h4 {
     text-align: center;
     font-weight: lighter;
     margin-top: 50px;
+}
+
+.titre p {
+    padding: 60px;
+    font-size: 18pt;
 }
 
 .ladiv {
@@ -133,20 +142,56 @@ label {
 .post p{
    margin-left: 30px;
    font-size: 10pt;
-   font-size: 9pt;
    margin-top: 8px;
 }
 
 .nombre {
     display: flex;
     justify-content: center;
-    
 }
 
 .pouce {
-    height: 50px;
-    width: 35px;
-    margin-right: 200px;
+    width: 10%;
+    text-align: center;
+    margin-left: 0%;
+    margin-top: 28px;
+}
+
+.numero {
+    margin-left: 0% !important;
+    margin-top: 28px !important;
+}
+
+.like {
+    display: flex;
+    justify-content: center;
+    width:100%;
+}
+
+.si {
+  align-items: flex-start;
+  justify-content: flex-start;
+  font-size: 10pt;
+}
+
+.si .numero {
+    font-size: 10pt;
+    margin-top: 0px !important;
+}
+
+.si .pouce {
+    margin-top: 0px !important;
+}
+
+.tsi {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.post1{
+    display: flex;
+    flex-direction: row;
 }
 
 .croix {
@@ -173,6 +218,21 @@ label {
     font-family: 'aileron';
     border-style: none;
 }
+
+.taille {
+    width: 40%;
+}
+
+.taille2 {
+    width: 100%;
+}
+
+.postimage {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
 /*Profil*/
 
 .tout {
@@ -211,6 +271,11 @@ label {
     font-size: 12pt;
 }
 
+form {
+    font-family: 'aileron';
+    font-weight: lighter;
+}
+
 .bouton2 {
     font-family: 'aileron';
     font-weight: lighter;
@@ -245,8 +310,18 @@ form .bouton1 {
     padding: 30px;
     width: 300px;
     margin-right: 45px;
-
 }
+
+.mesamis a {
+    text-decoration: none;
+    color:#1c9db0;
+    font-family: 'aileron';
+    font-weight: lighter;
+}
+
+.mesamis a:hover {
+    opacity: 0.5;
+} 
 
 .mesamis h2 {
     text-align: center;
@@ -331,6 +406,34 @@ form .bouton1 {
     font-size: 15pt;
 }
 
+/*recherche.php*/
+
+.bouton3 {
+    text-decoration: none;
+    font-family: 'aileron';
+    color: #1c9db0;
+} 
+
+.bouton3:hover {
+  opacity: 0.5;
+} 
+
+/*attente.php*/
+
+.bouton4 {
+    text-decoration: none;
+    font-family: 'aileron';
+    color: #1c9db0;
+    border: #1c9db0 1px solid;
+    background-color: white;
+    padding: 5px;
+
+} 
+
+.bouton4:hover {
+  opacity: 0.5;
+} 
+
 /*page erreur 404*/
 
 .pls {
@@ -352,8 +455,10 @@ footer {
     position: absolute;
     bottom:0;
     width:100%;
-    padding-top:50px;
-    margin-top: 60px;
-    height:30px;
+    height: 60px;
     color: white;
+}
+
+footer p {
+    padding-top: 1.5%;
 }
