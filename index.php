@@ -83,6 +83,8 @@ if (isset($_SESSION['info'])) {
             ?>
 
 
-<footer></footer>
+<footer>
+    <p>Valentine Ghesquiere - Manon Ghesquière</p>
+</footer>
 </body>
 </html>

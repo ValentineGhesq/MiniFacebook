@@ -3,7 +3,7 @@
 </div>
 
 <div class="tout">
-    <div>
+    <div class="moi">
         <div>
             <?php
             $sql2 = "SELECT * FROM user WHERE id=?";
@@ -14,8 +14,8 @@
             ?>
                 <form action="index.php?action=upload&id=<?php echo $line2['id'] ?> " method="post" enctype="multipart/form-data">
                     Choisi un avatar à Upload:
-                    <input type="file" name="file">
-                    <input type="submit" name="submit" value="Upload">
+                    <input class="bouton" type="file" name="file">
+                    <input class="bouton" type="submit" name="submit" value="Upload">
                 </form>
             <?php
             } else {
@@ -23,14 +23,14 @@
                 <img width='10%' src='avatar/<?php echo $line2['avatar'] ?>' alt='avatar'>
                 <form action="index.php?action=upload&id=<?php echo $line2['id'] ?>" method="post" enctype="multipart/form-data">
                     Changer d'avatar:
-                    <input type="file" name="file">
-                    <input type="submit" name="submit" value="Upload">
+                    <input class="bouton" type="file" name="file">
+                    <input class="bouton" type="submit" name="submit" value="Upload">
                 </form>
             <?php
             }
             ?>
         </div>
-        <div>
+        <div class="perso">
             <?php $sql = "SELECT * FROM user WHERE id=?";
             $q = $pdo->prepare($sql);
             $q->execute(array($_SESSION['id']));
@@ -38,7 +38,7 @@
             <h3>login : <?php echo $_SESSION['login']; ?> </h3>
             <h3> mail : <?php echo $line['email']; ?></h3>
             <form method="POST">
-                <input type='submit' name="changerlemotdepasse" value="changer le mot de passe">
+                <input class="bouton1" type='submit' name="changerlemotdepasse" value="changer le mot de passe">
             </form>
             <?php
             $ok = true;
@@ -108,7 +108,7 @@
 
         </div>
     </div>
-    <div>
+    <div class="mesamis">
         <h2>Mes amis</h2>
         <?php
         $sql = "SELECT * FROM user WHERE id IN ( SELECT user.id FROM user INNER JOIN lien ON idUtilisateur1=user.id AND etat='ami' AND idUTilisateur2=? UNION SELECT user.id FROM user INNER JOIN lien ON idUtilisateur2=user.id AND etat='ami' AND idUTilisateur1=?)";
@@ -159,8 +159,8 @@
     <div class="recherche">
         <h4>Rechercher des amis</h4>
         <form method="POST">
-            <input type="text" name="recherche" placeholder="recherche des amis">
-            <input type="submit" name="sub" value="recherche">
+            <input  class="rechbout" type="text" name="recherche" placeholder="recherche des amis">
+            <input class="bouton" type="submit" name="sub" value="recherche">
         </form>
         <?php include('traitement/recherche.php') ?>
 
