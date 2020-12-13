@@ -49,6 +49,8 @@ if (isset($_SESSION['info'])) {
     </div>
 </header>
 
+
+<div class="ensemble">
 <div class="bonjour">
 
         <?php
@@ -82,7 +84,7 @@ if (isset($_SESSION['info'])) {
             ob_end_flush(); // Je ferme le buffer, je vide la mémoire et affiche tout ce qui doit l'être
             ?>
 
-
+        </div>
 <footer>
     <p>Valentine Ghesquiere - Manon Ghesquière</p>
 </footer>

@@ -21,22 +21,12 @@ while ($line = $q->fetch()) {
 ?>
 
         <div class="mur">
-            <div class="post">
+            <div class="post tsi">
+               <div class="post1"> 
                 <h3><?= $line['us2_login'] ?></h3>
                 <p>le <?= $line['dateEcrit'] ?></p>
-                <a href='index.php?action=aime&id=<?= $line['ecrit_id'] ?>'> <img class="pouce" src='divers/pouce1.png' width='5%' alt='pouce'></a>
-                <p class="nombre">
-                    <?php
-                    $likes = 0;
-                    $s = "SELECT * FROM aime INNER JOIN ecrit on idEcrit=ecrit.id WHERE idEcrit=? order by dateEcrit DESC ";
-                    $query = $pdo->prepare($s);
-                    $query->execute(array($line['ecrit_id']));
-                    while ($lines = $query->fetch()) {
-                        $likes = $likes + 1;
-                    };
-                    echo $likes; ?>
-                </p>
-
+                </div> 
+                <div>  
                 <?php
                 if ($_GET['id'] == $_SESSION['id']) {
                 ?>
@@ -51,7 +41,22 @@ while ($line = $q->fetch()) {
                     }
                 }
                 ?>
+                </div>
             </div>
+            <div class="like si">
+                <a class="pouce" href='index.php?action=aime&id=<?= $line['ecrit_id'] ?>'> <img src='divers/pouce1.png' width='30%' alt='pouce'></a>
+                <p class="numero">
+                    <?php
+                    $likes = 0;
+                    $s = "SELECT * FROM aime INNER JOIN ecrit on idEcrit=ecrit.id WHERE idEcrit=? order by dateEcrit DESC ";
+                    $query = $pdo->prepare($s);
+                    $query->execute(array($line['ecrit_id']));
+                    while ($lines = $query->fetch()) {
+                        $likes = $likes + 1;
+                    };
+                    echo $likes; ?>
+                </p>
+                     </div>
             <div class="contenus">
                 <h2><?= $line['titre'] ?></h2>
                 <p><?= $line['contenu'] ?></p>
@@ -63,8 +68,9 @@ while ($line = $q->fetch()) {
             <div class="post">
                 <h3><?= $line['us2_login'] ?></h3>
                 <p>le <?= $line['dateEcrit'] ?></p>
-                <a href='index.php?action=aime&id=<?= $line['ecrit_id'] ?>'> <img src='divers/pouce1.png' width='5%' alt='pouce'></a>
-                <p>
+                    <div class="like">
+                <a class="pouce" href='index.php?action=aime&id=<?= $line['ecrit_id'] ?>'> <img src='divers/pouce1.png' width='50%' alt='pouce'></a>
+                <p class="numero">
                     <?php
                     $likes = 0;
                     $s = "SELECT * FROM aime INNER JOIN ecrit on idEcrit=ecrit.id WHERE idEcrit=? order by dateEcrit DESC ";
@@ -75,23 +81,24 @@ while ($line = $q->fetch()) {
                     };
                     echo $likes; ?>
                 </p>
+                    </div>
                 <?php
                 if ($_GET['id'] == $_SESSION['id']) {
                 ?>
-                    <a href='index.php?action=efface&id=<?php echo $line['ecrit_id'] ?>'> <img src="divers/croix.png" width='30%' alt="close"> </a>
+                    <a href='index.php?action=efface&id=<?php echo $line['ecrit_id'] ?>'> <img class="croix" src="divers/croix.png" width='30%' alt="close"> </a>
                     <?php
                 } else {
                     if ($line['idAuteur'] == $_SESSION['id']) {
                     ?>
-                        <a href='index.php?action=efface&id=<?php echo $line['ecrit_id'] ?>'> <img src="divers/croix.png" width='30%' alt="close"> </a>
+                        <a href='index.php?action=efface&id=<?php echo $line['ecrit_id'] ?>'> <img class="croix" src="divers/croix.png" width='30%' alt="close"> </a>
                 <?php
 
                     }
                 }
                 ?>
             </div>
-            <div>
-                <div><img src='image/<?= $line['image'] ?>' alt='imagepost'> </div>
+            <div class="postimage">
+                <div class="taille"><img class="taille2" src='image/<?= $line['image'] ?>' alt='imagepost'> </div>
                 <div class="contenus">
                     <h2><?= $line['titre'] ?></h2>
                     <p><?= $line['contenu'] ?></p>
