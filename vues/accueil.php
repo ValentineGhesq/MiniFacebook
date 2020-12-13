@@ -4,7 +4,7 @@
 
 <div class="tout">
     <div class="moi">
-        <div>
+        <div> 
             <?php
             $sql2 = "SELECT * FROM user WHERE id=?";
             $query = $pdo->prepare($sql2);
@@ -23,8 +23,8 @@
                 <img width='10%' src='avatar/<?php echo $line2['avatar'] ?>' alt='avatar'>
                 <form action="index.php?action=upload&id=<?php echo $line2['id'] ?>" method="post" enctype="multipart/form-data">
                     Changer d'avatar:
-                    <input class="bouton" type="file" name="file">
-                    <input class="bouton" type="submit" name="submit" value="Upload">
+                    <input class="bouton1" type="file" name="file">
+                    <input class="bouton1" type="submit" name="submit" value="Upload">
                 </form>
             <?php
             }
@@ -47,9 +47,9 @@
                 if (empty($_POST['sub'])) {
             ?>
                     <div>
-                        <form method="POST">
-                            <input type="password" name="mdp" placeholder="entrer votre mot de passe">
-                            <input type="submit" name="sub" value="Confirmer">
+                        <form class="bouton2" method="POST">
+                            <input class="champ" type="password" name="mdp" placeholder="entrer votre mot de passe">
+                            <input class="bouton1" type="submit" name="sub" value="Confirmer">
                         </form>
                     </div>
 
@@ -64,10 +64,10 @@
                     $line = $q->fetch();
                     if ($line == true) {
                     ?>
-                        <form method="POST">
+                        <form class="bouton2" method="POST">
                             <input type="password" name="nouveaumdp" placeholder="nouveau mot de passe" required>
                             <input type="password" name="confirmermdp" placeholder="confirmer mot de passe" required>
-                            <input type="submit" name="changemdp" value="Envoyer">
+                            <input class="bouton1" type="submit" name="changemdp" value="Envoyer">
                         </form>
 
                     <?php
