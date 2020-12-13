@@ -482,8 +482,16 @@ footer p {
         font-size: 10px;
     }
 
+    p {
+        font-size: 10px;
+    }
+
+    .post p {
+        font-size: 10px;
+    }
+
     .moi{
-        width: 300px;
+        width: 200px;
     }
     
     .mesamis {
@@ -495,6 +503,10 @@ footer p {
     }
     .mur {
         width: 300px;
+    }
+
+    .si .numero {
+        font-size: 10px;
     }
 
     .attente, .amis, .recherche{
@@ -520,5 +532,19 @@ footer p {
         height: 100%;
         width: 80%;
         margin-left: 10%;
+    }
+
+    .profil {
+        width: 20% !important;
+    }
+
+    .ladiv {
+        flex-direction: column;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .titre h2 {
+        font-size: 18pt;
     }
 }

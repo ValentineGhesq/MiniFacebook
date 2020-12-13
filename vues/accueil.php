@@ -125,7 +125,7 @@
                 <?php
                 } else {
                 ?>
-                    <li> <img width='10%' src='avatar/<?= $l['avatar'] ?>' alt='avatar'> <a href="index.php?action=mur&id=<?= $l['id'] ?>"> <?php echo $l['login'] ?> </a></li>
+                    <li> <img class="profil" width='10%' src='avatar/<?= $l['avatar'] ?>' alt='avatar'> <a href="index.php?action=mur&id=<?= $l['id'] ?>"> <?php echo $l['login'] ?> </a></li>
 
                 <?php
                 }
