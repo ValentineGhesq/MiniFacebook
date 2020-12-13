@@ -37,7 +37,7 @@ if (isset($_SESSION['info'])) {
 <header>
     <div class="tete">
         <div class="container">
-            <h3>My Face </h3>
+            <h3 class="logo">My Face </h3>
         
         <?php if (isset($_SESSION['id'])) { 
             echo "  <nav>

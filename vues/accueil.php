@@ -4,7 +4,7 @@
 
 <div class="tout">
     <div class="moi">
-        <div> 
+        <div>
             <?php
             $sql2 = "SELECT * FROM user WHERE id=?";
             $query = $pdo->prepare($sql2);
@@ -119,7 +119,7 @@
             <ul>
                 <?php
                 if ($l['avatar'] == "") {
-                    ?>
+                ?>
                     <li><a href="index.php?action=mur&id=<?= $l['id'] ?>"> <?php echo $l['login'] ?> </a></li>
 
                 <?php
@@ -159,7 +159,7 @@
     <div class="recherche">
         <h4>Rechercher des amis</h4>
         <form method="POST">
-            <input  class="rechbout" type="text" name="recherche" placeholder="recherche des amis">
+            <input class="rechbout" type="text" name="recherche" placeholder="recherche des amis">
             <input class="bouton" type="submit" name="sub" value="recherche">
         </form>
         <?php include('traitement/recherche.php') ?>
