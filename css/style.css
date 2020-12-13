@@ -315,6 +315,7 @@ form .bouton1 {
     padding: 30px;
     width: 300px;
     margin-right: 45px;
+    min-height: 65%;
 }
 
 .mesamis a {
@@ -339,6 +340,7 @@ form .bouton1 {
     margin-top: 50px;
     padding: 20px;
     width: 300px;
+    min-height: 65%;
 }
 
 .amis {
@@ -348,6 +350,7 @@ form .bouton1 {
     margin-top: 50px;
     padding: 20px;
     width: 300px;
+    min-height: 65%;
 }
 
 .recherche {
@@ -357,6 +360,7 @@ form .bouton1 {
     margin-top: 50px;
     padding: 20px;
     width: 300px;
+    min-height: 65%;
 }
 
 .recherche h4 {
@@ -491,7 +495,7 @@ footer p {
     }
 
     .moi{
-        width: 200px;
+        width: 220px;
     }
     
     .mesamis {
@@ -535,7 +539,7 @@ footer p {
     }
 
     .profil {
-        width: 20% !important;
+        width: 40% !important;
     }
 
     .ladiv {
