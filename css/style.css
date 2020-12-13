@@ -9,6 +9,15 @@
     font-style: normal;
 }
 
+body {
+    min-height: 100%;
+    position: relative;
+}
+
+html {
+    height: 100%;
+}
+
 h1 {
     text-align: center;
     font-family: 'aileron';
@@ -187,18 +196,32 @@ label {
     border-width: 1px;
     border-color: #1c9db0;
     padding: 30px;
+    width: 500px;
 }
 
-.moi form {
+.moi form:first-child {
     font-family: 'aileron';
     font-weight: lighter;
+    text-align: center;
+    display: flex;
+    justify-content: left;
+   flex-direction: column;
 }
-
 .perso h3{
     font-size: 12pt;
 }
 
-.bouton1 {
+.bouton2 {
+    font-family: 'aileron';
+    font-weight: lighter;
+    text-align: center;
+    display: flex;
+    justify-content: left;
+   flex-direction: column;
+   align-items: flex-start;
+}
+
+form .bouton1 {
     background-color: white;
     font-family: 'aileron';
     font-weight: lighter;
@@ -206,7 +229,13 @@ label {
     text-transform: capitalize;
     border-color: #1c9db0;
     padding: 5px;
-    
+    display: flex;
+    justify-content: left;
+}
+
+.champ {
+    display: flex;
+    justify-content: left;
 }
 
 .mesamis {
@@ -216,6 +245,7 @@ label {
     padding: 30px;
     width: 300px;
     margin-right: 45px;
+
 }
 
 .mesamis h2 {
@@ -319,7 +349,7 @@ p {
 
 footer {
     background-color: #1c9db0;
-    position: relative;
+    position: absolute;
     bottom:0;
     width:100%;
     padding-top:50px;
