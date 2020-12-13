@@ -118,14 +118,31 @@ label {
 
 .post {
     display: flex;
-    justify-content: center;
     color: black;
-    background-color: chartreuse;
 }
 
 .post p{
-   margin-left: 10px;
+   margin-left: 30px;
    font-size: 10pt;
+   font-size: 9pt;
+   margin-top: 8px;
+}
+
+.nombre {
+    display: flex;
+    justify-content: center;
+    
+}
+
+.pouce {
+    height: 50px;
+    width: 35px;
+    margin-right: 200px;
+}
+
+.croix {
+    height: 15px;
+    width: 15px;
 }
 
 .mur h3 {
@@ -151,12 +168,57 @@ label {
 
 .tout {
     display: flex;
+    justify-content: space-around;
+    padding-top: 50px;
+    padding-left: 20px;
 }
 
 .carre {
     display: flex;
     justify-content: center;
+    justify-content: space-around;
     height: 250px;
+    text-align: center;
+    
+}
+
+.moi {
+    border-style: solid;
+    border-width: 1px;
+    border-color: #1c9db0;
+    padding: 30px;
+}
+
+.moi form {
+    font-family: 'aileron';
+    font-weight: lighter;
+}
+
+.perso h3{
+    font-size: 12pt;
+}
+
+.bouton1 {
+    background-color: white;
+    font-family: 'aileron';
+    font-weight: lighter;
+    color: #1c9db0;
+    text-transform: capitalize;
+    border-color: #1c9db0;
+    padding: 5px;
+    
+}
+
+.mesamis {
+    border-style: solid;
+    border-width: 1px;
+    border-color: #1c9db0;
+    padding: 30px;
+    width: 300px;
+    margin-right: 45px;
+}
+
+.mesamis h2 {
     text-align: center;
 }
 
@@ -185,6 +247,14 @@ label {
     margin-top: 50px;
     padding: 20px;
     width: 300px;
+}
+
+.recherche h4 {
+    margin-bottom: 10px;
+}
+
+.rechbout {
+    margin-bottom: 10px;
 }
 
  .tete {
@@ -255,4 +325,5 @@ footer {
     padding-top:50px;
     margin-top: 60px;
     height:30px;
+    color: white;
 }
