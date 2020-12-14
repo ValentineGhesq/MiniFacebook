@@ -35,7 +35,7 @@ while ($line = $q->fetch()) {
                 } else {
                     if ($line['idAuteur'] == $_SESSION['id']) {
                     ?>
-                        <a href='index.php?action=efface&id=<?php echo $line['ecrit_id'] ?>'> <img src="divers/croix.png" width='30%' alt="close"> </a>
+                        <a href='index.php?action=efface&id=<?php echo $line['ecrit_id'] ?>'> <img class="croix" src="divers/croix.png" width='30%' alt="close"> </a>
                 <?php
 
                     }
@@ -90,7 +90,7 @@ while ($line = $q->fetch()) {
                 } else {
                     if ($line['idAuteur'] == $_SESSION['id']) {
                     ?>
-                        <a href='index.php?action=efface&id=<?php echo $line['ecrit_id'] ?>'> <img class="croix" src="divers/croix.png" width='30%' alt="close"> </a>
+                    <a href='index.php?action=efface&id=<?php echo $line['ecrit_id'] ?>'> <img class="croix" src="divers/croix.png" width='10%' alt="close"> </a>
                 <?php
 
                     }
